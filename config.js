@@ -1,6 +1,6 @@
 const CONFIG = {
     introTitle: 'Hế lô cậu!',
-    introDesc: `Tớ có điều thứ này muốn cho cậu xem, nhưng cũng có điều này tớ cũng muốn hỏi cậu, cậu nhớ phải trả lời thật lòng nha`,
+    introDesc: `Tớ có thứ này muốn cho cậu xem, nhưng cũng có điều này tớ cũng muốn hỏi cậu, cậu nhớ phải trả lời thật lòng đó nha`,
     btnIntro: 'Oke nà',
     title: 'Cậu yêu tớ có phải không 😙',
     desc: 'Cậu không trả lời hoặc thoát ra, tức là cậu yêu tớ đó nha :> ',
