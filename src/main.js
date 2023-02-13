@@ -4,7 +4,7 @@ function checkCode() {
   
     if (code === validCode) {
       localStorage.setItem("loggedIn", true);
-      window.location = "https://firehelper.tk/Playground.htm";
+      window.location = "https://firehelper.tk/index.html";
     } else {
       alert("Incorrect code. Try again.");
     }
