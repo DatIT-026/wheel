@@ -1,10 +1,10 @@
 function checkCode() {
     const code = document.getElementById("code").value;
-    const validCode = "3D47wT";
+    const validCode = "83at7k";
   
     if (code === validCode) {
       localStorage.setItem("loggedIn", true);
-      window.location = "https://firehelper.tk/playground.html";
+      window.location = "https://firehelper.tk/playground-0112.html";
     } else {
       alert("Incorrect code. Try again.");
     }
