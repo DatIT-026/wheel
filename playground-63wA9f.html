@@ -34,18 +34,18 @@
             let duration = 2; //Thời gian kết thúc vòng quay
             let spins    = 3; //Quay nhanh hay chậm 3, 8, 15
             let theWheel = new Winwheel({
-                'numSegments'  : 5,     // Chia 8 phần bằng nhau
+                'numSegments'  : 6,     // Chia 8 phần bằng nhau
                 'outerRadius'  : 212,   // Đặt bán kính vòng quay
                 'textFontSize' : 18,    // Đặt kích thước chữ
                 'rotationAngle': 0,     // Đặt góc vòng quay từ 0 đến 360 độ.
                 'segments'     :        // Các thành phần bao gồm màu sắc và văn bản.
                 [
-                   {'fillStyle' : '#eae56f', 'text' : '1 ly trà sữa'},
+                   {'fillStyle' : '#ff7f50', 'text' : '1 món đồ dưới 100k'},
                    {'fillStyle' : '#89f26e', 'text' : '50.000 Đồng'},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Nothing'},
-                   {'fillStyle' : '#e7706f', 'text' : '1 món đồ dưới 100k'},
-                   {'fillStyle' : '#eae56f', 'text' : 'All of Them'},
-                   {'fillStyle' : '#89f26e', 'text' : 'Giải 6'},
+                   {'fillStyle' : '#7de6ef', 'text' : '1 ly trà sữa'},
+                   {'fillStyle' : '#ff0000', 'text' : 'Nothing'},
+                   {'fillStyle' : '#ff00ff', 'text' : '1 món đồ ở căn tin'},
+                   {'fillStyle' : '#ffd700', 'text' : 'All of Them'},
                    {'fillStyle' : '#7de6ef', 'text' : 'Giải 7'},
                    {'fillStyle' : '#e7706f', 'text' : 'Giải 8'},
                 ],
@@ -143,7 +143,7 @@
             function stopAngle() {
                 //Ta có: 360 độ chia 8 bằng 45 độ cho mỗi giải thưởng.
                 //VD: Giải 3 => Có gốc độ từ 91 đến 135.
-                let start = 180;
+                let start = 190;
                 let stop = Math.floor((Math.random() * 44)); //Giá trị cao nhất 44
                 let stopAt = start + stop;
                 theWheel.animation.stopAngle = stopAt;
