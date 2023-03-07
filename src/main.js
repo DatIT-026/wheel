@@ -1,6 +1,6 @@
 function checkCode() {
     const code = document.getElementById("code").value;
-    const validCode = "6wbTe1";
+    const validCode = "e79b0t";
   
     if (code === validCode) {
       localStorage.setItem("loggedIn", true);

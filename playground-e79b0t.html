@@ -9,8 +9,9 @@
     </head>
     <body>
         <center>
-            <h1>Vòng quay may mắn</h1>
-            <h3><i>Vòng quay chỉ mở khi có những sự kiện đặc biệt do DatIT rảnh quá nên mới làm :)))</i></h3>
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif';">Vòng quay may mắn</h1>
+            <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: red;">💥 Xác suất vào ô "All of them" lên đến 86‰. Chúc mừng ngày Quốc Tế Phụ Nữ 8/3 💥</h3>
+            <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif'"><i>Vòng quay chỉ mở khi có những sự kiện đặc biệt do DatIT rảnh quá nên mới làm :)))</i></p>
         </center>
         
         <div align="center">
@@ -42,9 +43,9 @@
                 [
                    {'fillStyle' : '#ff7f50', 'text' : '1 món đồ dưới 100k'},
                    {'fillStyle' : '#89f26e', 'text' : '50.000 Đồng'},
-                   {'fillStyle' : '#7de6ef', 'text' : '1 ly trà sữa'},
+                   {'fillStyle' : '#7de6ef', 'text' : '1 món đồ ở căn tin'},
                    {'fillStyle' : '#ff0000', 'text' : 'Nothing'},
-                   {'fillStyle' : '#ff00ff', 'text' : '1 món đồ ở căn tin'},
+                   {'fillStyle' : '#ff00ff', 'text' : '1 ly trà sữa'},
                    {'fillStyle' : '#ffd700', 'text' : 'All of Them'},
                    {'fillStyle' : '#7de6ef', 'text' : 'Giải 7'},
                    {'fillStyle' : '#e7706f', 'text' : 'Giải 8'},
@@ -143,7 +144,7 @@
             function stopAngle() {
                 //Ta có: 360 độ chia 8 bằng 45 độ cho mỗi giải thưởng.
                 //VD: Giải 3 => Có gốc độ từ 91 đến 135.
-                let start = 190;
+                let start = 180; //190 = nothing
                 let stop = Math.floor((Math.random() * 44)); //Giá trị cao nhất 44
                 let stopAt = start + stop;
                 theWheel.animation.stopAngle = stopAt;
