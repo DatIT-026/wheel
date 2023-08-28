@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <title>FireHelper - Playground</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <link type="icon/x-icon" href="favicon.png" rel="shortcut icon" />
+        <script type="text/javascript" src="Winwheel.min.js"></script>
+        <script src="TweenMax.min.js"></script>
+    </head>
+    <body>
+        <center>
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif';">Vòng quay may mắn</h1>
+            <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: red;">💥 Xác suất vào ô "All of them" lên đến 99‰. Chúc mừng sinh nhật 💥</h3>
+            <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif'"><i>Vòng quay chỉ mở khi có những sự kiện đặc biệt do DatIT rảnh quá nên mới làm :)))</i></p>
+        </center>
+        
+        <div align="center">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td>
+                        <button id="spin_start" class="btn" onClick="startSpin();">Quay ngay</button>
+                        <button id="spin_stop" class="btn" onClick="stopSpin();">Dừng lại</button>
+                        <button id="spin_reset" class="btn" onClick="resetWheel();">Quay lại</button>
+                    </td>
+                    <td width="438" height="582" class="the_wheel" align="center" valign="center">
+                        <canvas id="canvas" width="434" height="434">
+                            <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                        </canvas>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            //Thông số vòng quay
+            let duration = 2; //Thời gian kết thúc vòng quay
+            let spins    = 3; //Quay nhanh hay chậm 3, 8, 15
+            let theWheel = new Winwheel({
+                'numSegments'  : 6,     // Chia 8 phần bằng nhau
+                'outerRadius'  : 212,   // Đặt bán kính vòng quay
+                'textFontSize' : 18,    // Đặt kích thước chữ
+                'rotationAngle': 0,     // Đặt góc vòng quay từ 0 đến 360 độ.
+                'segments'     :        // Các thành phần bao gồm màu sắc và văn bản.
+                [
+                   {'fillStyle' : '#ff7f50', 'text' : 'Aya Thuỷ Thủ'},
+                   {'fillStyle' : '#ff0000', 'text' : 'Nothing'},
+                   {'fillStyle' : '#73deef', 'text' : 'Alice Gấu Tuyết'},
+                   {'fillStyle' : '#ff0000', 'text' : 'Nothing'},
+                   //{'fillStyle' : '#ff00ff', 'text' : '1 ly trà sữa'},
+                   {'fillStyle' : '#7de7af', 'text' : '1 ly trà sữa'},
+                   {'fillStyle' : '#ffd700', 'text' : 'Lauriel Phi Thiên'},
+                   {'fillStyle' : '#7de6ef', 'text' : 'Giải 7'},
+                   {'fillStyle' : '#e7706f', 'text' : 'Giải 8'},
+                ],
+                'animation' : {
+                    'type'     : 'spinOngoing', //spinToStop, spinOngoing
+                    'duration' : duration,
+                    'spins'    : spins,
+                    'callbackSound'    : playSound,     //Hàm gọi âm thanh khi quay
+                    'soundTrigger'     : 'pin',         //Chỉ định chân là để kích hoạt âm thanh
+                    'callbackFinished' : alertPrize,    //Hàm hiển thị kết quả trúng giải thưởng
+                },
+                'pins' :
+                {
+                    'number' : 16   //Số lượng chân. Chia đều xung quanh vòng quay.
+                }
+            });
+            
+            //Kiểm tra vòng quay
+            let wheelSpinning = false;
+            
+            //Tạo âm thanh và tải tập tin tick.mp3.
+            let audio = new Audio('tick.mp3');
+            function playSound() {
+                audio.pause();
+                audio.currentTime = 0;
+                audio.play();
+            }
+            
+            //Hiển thị các nút vòng quay
+            function statusButton(status) {
+                if ( status==1 ) { //trước khi quay
+                    document.getElementById('spin_start').classList.remove("hide");
+                    document.getElementById('spin_stop').classList.add("hide");
+                    document.getElementById('spin_reset').classList.add("hide");
+                } else if ( status==2 ) { //đang quay
+                    document.getElementById('spin_start').classList.add("hide");
+                    document.getElementById('spin_stop').classList.remove("hide");
+                    document.getElementById('spin_reset').classList.add("hide");
+                } else if ( status==3 ) { //kết quả
+                    document.getElementById('spin_start').classList.add("hide");
+                    document.getElementById('spin_stop').classList.add("hide");
+                    document.getElementById('spin_reset').classList.remove("hide");
+                } else {
+                    alert('Các giá trị của status: 1, 2, 3');
+                }
+            }
+            statusButton(1);
+            
+            //startSpin
+            function startSpin() {
+                // Ensure that spinning can't be clicked again while already running.
+                if (wheelSpinning == false) {
+                    //CSS hiển thị button
+                    statusButton(2);
+                    
+                    //Cấu hình vòng quay
+                    theWheel.animation = {
+                        'type'     : 'spinOngoing',
+                        'duration' : duration,
+                        'spins'    : spins,
+                        'callbackSound'    : playSound,     //Hàm gọi âm thanh khi quay
+                        'soundTrigger'     : 'pin',         //Chỉ định chân là để kích hoạt âm thanh
+                        'callbackFinished' : alertPrize,    //Hàm hiển thị kết quả trúng giải thưởng
+                    };
+                    
+                    //Hàm bắt đầu quay
+                    theWheel.startAnimation();
+                }
+            }
+            
+            //stopSpin
+            function stopSpin() {
+                if (wheelSpinning == false) {
+                    theWheel.animation = {
+                        'type'     : 'spinToStop',
+                        'duration' : (duration + 13),
+                        'spins'    : (spins + 1),
+                        'callbackSound'    : playSound,     //Hàm gọi âm thanh khi quay
+                        'soundTrigger'     : 'pin',         //Chỉ định chân là để kích hoạt âm thanh
+                        'callbackFinished' : alertPrize,    //Hàm hiển thị kết quả trúng giải thưởng
+                    };
+                    
+                    //Kết quả chỉ định
+                    stopAngle();
+
+                    //Hàm bắt đầu quay
+                    theWheel.startAnimation();
+
+                    //Khóa vòng quay
+                    wheelSpinning = true;
+                }
+            }
+            
+            //stopAngle
+            function stopAngle() {
+                //Ta có: 360 độ chia 8 bằng 45 độ cho mỗi giải thưởng.
+                //VD: Giải 3 => Có gốc độ từ 91 đến 135.
+                let start = 190;
+                let stop = Math.floor((Math.random() * 44)); //Giá trị cao nhất 44
+                let stopAt = start + stop;
+                theWheel.animation.stopAngle = stopAt;
+            }
+            
+            //Result
+            function alertPrize(indicatedSegment) {
+                if(indicatedSegment.text === "Nothing"){
+                    alert("Chúc mừng bạn may mắn lần sau");
+                }
+                else {
+                    alert("Chúc mừng bạn đã trúng: " + indicatedSegment.text);
+                }
+                
+                //CSS hiển thị button
+                statusButton(3);
+            }
+
+            //resetWheel
+            function resetWheel() {
+                //CSS hiển thị button
+                statusButton(1);
+                
+                theWheel.stopAnimation(false);
+                theWheel.rotationAngle = 0;
+                theWheel.draw();
+
+                wheelSpinning = false;
+            }
+        </script>
+
+    <center>
+    <br/>
+    <h7>
+        <b>Lưu ý:</b> Khu vực Playground này đang trong giai đoạn phát triển nên sẽ có lỗi. Chỉ 1 người chơi và cũng chỉ được quay <b>1 lần</b> duy nhất.
+         Liên hệ <a href="https://www.facebook.com/datit.dev/">tại đây</a> để được hỗ trợ nếu gặp vấn đề hoặc có phát sinh lỗi.
+    </h7>
+        <div class="footer">
+            <img src="logo.png" alt="Company Logo">
+            <h3>© Firehelper Team 2023</h3>
+          </div>
+          
+    </center>
+
+    
+
+    </body>
+</html>
