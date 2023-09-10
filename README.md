@@ -6,3 +6,4 @@ The website is created for entertainment, NEVER use it for illegal purposes, con
 ### For Help, please contact here: https://www.facebook.com/datit.dev/
 
 ### Check this Website: https://datit-026.github.io/thu-khoa-ly/
+Find the Code here: https://www.facebook.com/hanguyentiendat2006
