@@ -8,7 +8,7 @@ Không có thời hạn cho dự án này nhưng chúng tôi thường end 1 d�
 # Lưu ý
 Trang web được lập ra với mục đích giải trí, TUYỆT ĐỐI không được sử dụng nó cho mục đích xấu, trái quy định pháp luật.
 
-The website is created for entertainment, NEVER use it for illegal purposes, contrary to the law.
+This website is created for entertainment, NEVER use it for illegal purposes, contrary to the law.
 
 ### For Help, please contact here: https://www.facebook.com/datit.dev/
 
