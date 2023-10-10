@@ -1,3 +1,6 @@
+# Thông Tin
+Đây là dự án thứ 6 của tôi trong chuỗi Crazy Gifts và lần này, chúng tôi giới thiệu dự án Vòng Quay May Mắn (Không Ngẫu Nhiên), trang web được tạo ra bằng html và css thuần, chuẩn khởi đầu và chưa ngẫu nhiên (điều này sẽ được cải thiện vào một ngày nào đó)
+
 # Lưu ý
 Trang web được lập ra với mục đích giải trí, TUYỆT ĐỐI không được sử dụng nó cho mục đích phi pháp, trái quy định pháp luật.
 
