@@ -1,7 +1,8 @@
-# This project has been end of support.
+# Support for the Wheel Project has ended
+After 14 months, security updates and technical support for the Wheel Project ended on May 10, 2024.
 
 ## Thông Tin
-Đây là dự án thứ 6 của tôi trong chuỗi Crazy Gifts và lần này, chúng tôi xin giới thiệu dự án Vòng Quay May Mắn (Không Ngẫu Nhiên).
+Đây là dự án thứ 6 của tôi trong chuỗi Crazy Gifts và lần này, chúng tôi xin giới thiệu dự án Vòng Quay May Mắn (The Wheel Project) (Không Ngẫu Nhiên).
 
 Trang web được tạo ra bằng HTML và CSS thuần, chuẩn khởi đầu và chưa thể trả kết quả ngẫu nhiên (điều này sẽ được cải thiện vào một ngày nào đó)
 
