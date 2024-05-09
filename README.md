@@ -15,7 +15,7 @@ This website is created for entertainment, NEVER use it for illegal purposes, co
 
 ## Contact us
 - Email: tiendatha2006@gmail.com
-- Looking for the Code here: [Facebook](https://www.facebook.com/datit.dev/)
+- Looking for the Code here: Ended.
 
 Please feel free to contact me through these channels.
 
