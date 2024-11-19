@@ -1,22 +1,18 @@
-# Support for the Wheel Project has ended
+# ⚠️ Support for the Wheel Project has ended
 After 14 months, security updates and technical support for the Wheel Project ended on May 10, 2024.
 
-## Thông Tin
-Đây là dự án thứ 6 của tôi trong chuỗi Crazy Gifts và lần này, chúng tôi xin giới thiệu dự án Vòng Quay May Mắn (The Wheel Project) (Không Ngẫu Nhiên).
+## Info
+This is the 6th project in the **Crazy Gifts** series. We are excited to introduce **The Wheel Project (Not Random)**.
 
-Trang web được tạo ra bằng HTML và CSS thuần, chuẩn khởi đầu và chưa thể trả kết quả ngẫu nhiên (điều này sẽ được cải thiện vào một ngày nào đó)
+The website is built using pure HTML and CSS, serving as a simple and solid foundation. Currently, it does not support generating random results, though this improvement is planned for future updates.
 
-Không có thời hạn cho dự án này nhưng chúng tôi thường end 1 dự án sau 1 hoặc 2 năm và ít nhất cũng trên 6 tháng cho 1 dự án. Một số dự án không phù hợp hoặc có hại sẽ ngay lập tức bị hủy và loại bỏ.
-
-## Lưu ý
-Trang web được lập ra với mục đích giải trí, TUYỆT ĐỐI không được sử dụng nó cho mục đích xấu, trái quy định pháp luật.
-
-This website is created for entertainment, NEVER use it for illegal purposes, contrary to the law.
+This project reached its end of life on **May 10, 2024**.
 
 ## Contact us
-- Email: tiendatha2006@gmail.com
-- Looking for the Code here: Ended.
+- **Email:** `End of support`
+- **Code here:** `Ended`
 
-Please feel free to contact me through these channels.
+## Disclaimer
+This project is for research purposes only. Illegal use is strictly prohibited.
 
 This project is licensed under the [MIT License](LICENSE).
