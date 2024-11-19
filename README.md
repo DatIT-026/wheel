@@ -9,7 +9,7 @@ The website is built using pure HTML and CSS, serving as a simple and solid foun
 This project reached its end of life on **May 10, 2024**.
 
 ## Contact us
-- **Email:** `End of support`
+- **Email:** `End-of-support`
 - **Code here:** `Ended`
 
 ## Disclaimer
